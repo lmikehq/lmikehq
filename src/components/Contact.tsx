@@ -17,10 +17,11 @@ const Contact: React.FC = () => {
     "idle" | "submitting" | "success" | "error"
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [hasSubmitted, setHasSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formRef.current) return;
+    if (!formRef.current || hasSubmitted) return;
 
     setFormState("submitting");
     setErrorMessage("");
@@ -64,8 +65,8 @@ const Contact: React.FC = () => {
       );
 
       setFormState("success");
+      setHasSubmitted(true);
       formRef.current.reset();
-      setTimeout(() => setFormState("idle"), 5000);
     } catch (error) {
       console.error("EmailJS error:", error);
       setFormState("error");
