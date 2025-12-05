@@ -21,7 +21,7 @@ export const PERSONAL_INFO = {
   socials: {
     github: "github.com/lmikehq",
     linkedin: "linkedin.com/in/mikeadebisi",
-    twitter: "twitter.com/MikeHQ",
+    twitter: "twitter.com/LMikeHQ",
     website: "https://mikehq.tech",
   },
 };
