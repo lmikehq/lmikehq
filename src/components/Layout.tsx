@@ -16,7 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Navbar />
       <main>{children}</main>
       <Footer />
-      <ChatWidget />
+      {/* <ChatWidget /> */}
       <NewsletterModal />
     </div>
   );
