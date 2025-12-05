@@ -47,14 +47,14 @@ const Meta: React.FC<MetaProps> = ({
       <link rel="canonical" href={url} />
 
       {/* Favicon */}
-      <link rel="icon" href="/favicon.ico" />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/apple-touch-icon.png"
-      />
+      <link rel="icon" href="/favicon.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
 
-      {/* Schema.org structured data for SEO */}
+        {/* Schema.org structured data for SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -68,7 +68,7 @@ const Meta: React.FC<MetaProps> = ({
             jobTitle: "Machine Learning Engineer & AI Architect",
             worksFor: {
               "@type": "Organization",
-              name: "Thrillers Travels Ltd",
+              name: "Zentira",
             },
             sameAs: [
               "https://github.com/lmikehq",

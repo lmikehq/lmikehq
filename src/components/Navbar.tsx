@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
           href="/"
           className="text-xl font-bold tracking-tight text-slate-900"
         >
-          Mike<span className="text-primary-600">HQ</span>
+          <img src="logo_no_bg.png" alt="logo image" className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
