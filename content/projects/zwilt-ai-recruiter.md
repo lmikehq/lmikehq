@@ -12,7 +12,7 @@ stats:
     value: "92%"
 technologies:
   ["Python", "TensorFlow", "HuggingFace", "FastAPI", "PostgreSQL", "Docker"]
-github: "https://github.com/r33ldev/zwilt-recruiter"
+github: "https://github.com/lmikehq/zwilt-recruiter"
 demo: "https://zwilt.demo.mikehq.tech"
 featured: true
 date: "2023-06-15"

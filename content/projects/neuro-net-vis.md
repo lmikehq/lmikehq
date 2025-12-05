@@ -11,7 +11,7 @@ stats:
   - label: "Forks"
     value: "300+"
 technologies: ["Python", "PyTorch", "D3.js", "React", "WebGL", "Flask"]
-github: "https://github.com/r33ldev/neuro-net-vis"
+github: "https://github.com/lmikehq/neuro-net-vis"
 demo: "https://neuronetvis.mikehq.tech"
 featured: false
 date: "2022-05-18"

@@ -1,0 +1,92 @@
+"use client";
+
+import { useEffect } from "react";
+
+const CodeBlockEnhancer: React.FC = () => {
+  useEffect(() => {
+    // Find all pre > code blocks in the article content
+    const codeBlocks = document.querySelectorAll(".article-content pre code");
+
+    codeBlocks.forEach((codeBlock) => {
+      const pre = codeBlock.parentElement;
+      if (!pre || pre.querySelector(".copy-btn")) return; // Already enhanced
+
+      // Get language from class (e.g., "language-python" or "hljs language-python")
+      const classes = codeBlock.className.split(" ");
+      const langClass = classes.find(
+        (c) => c.startsWith("language-") || c.startsWith("hljs-")
+      );
+      let language = langClass
+        ? langClass.replace("language-", "").replace("hljs-", "")
+        : "code";
+
+      // Map common language names
+      const langMap: Record<string, string> = {
+        js: "JavaScript",
+        ts: "TypeScript",
+        jsx: "JSX",
+        tsx: "TSX",
+        py: "Python",
+        python: "Python",
+        javascript: "JavaScript",
+        typescript: "TypeScript",
+        bash: "Bash",
+        sh: "Shell",
+        shell: "Shell",
+        json: "JSON",
+        html: "HTML",
+        css: "CSS",
+        sql: "SQL",
+        yaml: "YAML",
+        yml: "YAML",
+        md: "Markdown",
+        markdown: "Markdown",
+        go: "Go",
+        rust: "Rust",
+        cpp: "C++",
+        c: "C",
+        java: "Java",
+        ruby: "Ruby",
+        php: "PHP",
+        swift: "Swift",
+        kotlin: "Kotlin",
+        dockerfile: "Dockerfile",
+        plaintext: "Text",
+        text: "Text",
+      };
+
+      const displayLang = langMap[language.toLowerCase()] || language.toUpperCase();
+
+      // Set language as data attribute for CSS
+      pre.setAttribute("data-language", displayLang);
+
+      // Create copy button
+      const copyBtn = document.createElement("button");
+      copyBtn.className = "copy-btn";
+      copyBtn.textContent = "📋";
+      copyBtn.title = "Copy code";
+
+      copyBtn.addEventListener("click", async () => {
+        const code = codeBlock.textContent || "";
+        try {
+          await navigator.clipboard.writeText(code);
+          copyBtn.textContent = "✅";
+          copyBtn.classList.add("copied");
+
+          setTimeout(() => {
+            copyBtn.textContent = "📋";
+            copyBtn.classList.remove("copied");
+          }, 2000);
+        } catch (err) {
+          console.error("Failed to copy:", err);
+        }
+      });
+
+      pre.appendChild(copyBtn);
+    });
+  }, []);
+
+  return null;
+};
+
+export default CodeBlockEnhancer;

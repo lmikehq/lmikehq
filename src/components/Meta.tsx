@@ -71,7 +71,7 @@ const Meta: React.FC<MetaProps> = ({
               name: "Thrillers Travels Ltd",
             },
             sameAs: [
-              "https://github.com/r33ldev",
+              "https://github.com/lmikehq",
               "https://linkedin.com/in/mikeadebisi",
               "https://twitter.com/MikeHQ",
             ],

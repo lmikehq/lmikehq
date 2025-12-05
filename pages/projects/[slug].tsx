@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, Github, ExternalLink } from "lucide-react";
 import { getAllSlugs, getProjectBySlug, ProjectMeta } from "@/lib/content";
 import Meta from "@/components/Meta";
+import CodeBlockEnhancer from "@/components/ui/CodeBlockEnhancer";
 
 interface ProjectDetailProps {
   project: {
@@ -16,6 +17,7 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
 
   return (
     <>
+      <CodeBlockEnhancer />
       <Meta
         title={`${meta.title} | Projects | MikeHQ`}
         description={meta.description}

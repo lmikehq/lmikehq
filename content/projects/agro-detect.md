@@ -12,7 +12,7 @@ stats:
     value: "50+"
 technologies:
   ["Python", "TensorFlow Lite", "Raspberry Pi", "OpenCV", "MQTT", "LoRaWAN"]
-github: "https://github.com/r33ldev/agro-detect"
+github: "https://github.com/lmikehq/agro-detect"
 demo: ""
 featured: false
 date: "2022-02-28"

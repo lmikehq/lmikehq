@@ -31,9 +31,8 @@ const ResearchPage = ({ papers }: ResearchPageProps) => {
               <motion.div
                 key={paper.meta.id}
                 initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: idx * 0.05, duration: 0.4 }}
                 className="group relative flex flex-col gap-6 rounded-2xl border border-slate-100 bg-slate-50 p-6 transition-all hover:bg-white hover:shadow-lg md:flex-row md:items-start"
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-100 text-primary-600">

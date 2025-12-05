@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { getAllSlugs, getResearchBySlug, ResearchMeta } from "@/lib/content";
 import Meta from "@/components/Meta";
+import CodeBlockEnhancer from "@/components/ui/CodeBlockEnhancer";
 
 interface ResearchDetailProps {
   paper: {
@@ -22,6 +23,7 @@ const ResearchDetail = ({ paper }: ResearchDetailProps) => {
 
   return (
     <>
+      <CodeBlockEnhancer />
       <Meta
         title={`${meta.title} | Research | MikeHQ`}
         description={meta.abstract}

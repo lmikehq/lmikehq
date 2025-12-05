@@ -34,9 +34,8 @@ const BlogPage = ({ posts }: BlogPageProps) => {
               <motion.article
                 key={post.meta.id}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.05, duration: 0.4 }}
                 className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-100 transition-all hover:shadow-xl"
               >
                 <Link

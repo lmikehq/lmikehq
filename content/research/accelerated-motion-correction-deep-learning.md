@@ -163,4 +163,4 @@ Deep learning can solve motion correction in real-time, dramatically expanding w
 
 ## Code Availability
 
-Code and pretrained models: [github.com/mikehq/motion-correction-dl](https://github.com/mikehq/motion-correction-dl)
+Code and pretrained models: [github.com/lmikehq/motion-correction-dl](https://github.com/lmikehq/motion-correction-dl)

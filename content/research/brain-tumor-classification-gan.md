@@ -205,6 +205,6 @@ AC-StyleGAN demonstrates that joint generation and classification improves both 
 
 ## Code & Data
 
-- Code: [github.com/mikehq/ac-stylegan-tumor](https://github.com/mikehq/ac-stylegan-tumor)
+- Code: [github.com/lmikehq/ac-stylegan-tumor](https://github.com/lmikehq/ac-stylegan-tumor)
 - Paper: [https://doi.org/10.1007/s10916-023-01932-x](https://doi.org/10.1007/s10916-023-01932-x)
 - Pretrained Models: Available on HuggingFace

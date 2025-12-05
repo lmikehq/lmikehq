@@ -17,6 +17,7 @@ export interface SkillCategory {
 export interface ProjectItem {
   id: number;
   title: string;
+  slug: string;
   category: string;
   description: string;
   image: string;
@@ -26,6 +27,7 @@ export interface ProjectItem {
 export interface ResearchItem {
   id: number;
   title: string;
+  slug: string;
   conference: string;
   date: string;
   abstract: string;
@@ -36,6 +38,7 @@ export interface ResearchItem {
 export interface BlogPost {
   id: number;
   title: string;
+  slug: string;
   excerpt: string;
   date: string;
   readTime: string;

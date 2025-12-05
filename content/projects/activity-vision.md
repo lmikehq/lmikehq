@@ -12,7 +12,7 @@ stats:
     value: "5k+"
 technologies:
   ["Python", "OpenCV", "TensorFlow", "Tesseract OCR", "Redis", "Electron"]
-github: "https://github.com/r33ldev/activity-vision"
+github: "https://github.com/lmikehq/activity-vision"
 demo: ""
 featured: true
 date: "2022-11-10"

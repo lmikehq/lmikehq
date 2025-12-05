@@ -1,9 +1,12 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
-import gfm from "remark-gfm";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import remarkRehype from "remark-rehype";
+import rehypeHighlight from "rehype-highlight";
+import rehypeStringify from "rehype-stringify";
 
 const contentDirectory = path.join(process.cwd(), "content");
 
@@ -109,10 +112,13 @@ export async function getContentBySlug<T>(
   const fileContents = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContents);
 
-  // Convert markdown to HTML with GFM support (tables, strikethrough, etc.)
-  const processedContent = await remark()
-    .use(gfm)
-    .use(html, { sanitize: false })
+  // Convert markdown to HTML with GFM and syntax highlighting
+  const processedContent = await unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype)
+    .use(rehypeHighlight)
+    .use(rehypeStringify)
     .process(content);
   const contentHtml = processedContent.toString();
 

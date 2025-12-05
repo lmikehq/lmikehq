@@ -14,6 +14,17 @@
   --color-primary-900: #1e3a8a;
 }
 
+/* Global cursor pointer for interactive elements */
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+.cursor-pointer {
+  cursor: pointer;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
@@ -245,15 +256,17 @@ html {
 
 /* Code Blocks */
 .article-content pre {
-  background: #1e293b;
+  position: relative;
+  background: #0f172a;
   color: #e2e8f0;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.5rem;
+  padding-top: 2.5rem;
   border-radius: 0.75rem;
   overflow-x: auto;
   margin: 1.5em 0;
   font-size: 0.875rem;
   line-height: 1.7;
-  border: 1px solid #334155;
+  border: 1px solid #1e293b;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
@@ -268,35 +281,141 @@ html {
   font-weight: 400;
 }
 
-/* Syntax Highlighting Colors */
-.article-content pre .keyword,
-.article-content pre .hljs-keyword {
-  color: #c084fc;
+/* Code block header with language label */
+.article-content pre::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  background: #1e293b;
+  border-bottom: 1px solid #334155;
+  border-radius: 0.75rem 0.75rem 0 0;
 }
 
-.article-content pre .string,
-.article-content pre .hljs-string {
-  color: #86efac;
+/* Copy button */
+.article-content pre .copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem;
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+  z-index: 10;
+  line-height: 1;
 }
 
-.article-content pre .comment,
-.article-content pre .hljs-comment {
-  color: #64748b;
+.article-content pre .copy-btn:hover {
+  opacity: 1;
+}
+
+.article-content pre .copy-btn.copied {
+  opacity: 1;
+}
+
+/* ===== Highlight.js Syntax Theme (GitHub Dark) ===== */
+.hljs {
+  background: transparent !important;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #8b949e;
   font-style: italic;
 }
 
-.article-content pre .function,
-.article-content pre .hljs-title {
-  color: #67e8f9;
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+  color: #ff7b72;
 }
 
-.article-content pre .number,
-.article-content pre .hljs-number {
-  color: #fcd34d;
+.hljs-literal,
+.hljs-number,
+.hljs-tag .hljs-attr,
+.hljs-template-variable,
+.hljs-variable {
+  color: #79c0ff;
 }
 
-.article-content pre .operator {
-  color: #f472b6;
+.hljs-string,
+.hljs-doctag,
+.hljs-regexp {
+  color: #a5d6ff;
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.function_ {
+  color: #d2a8ff;
+}
+
+.hljs-name,
+.hljs-section,
+.hljs-selector-id {
+  color: #7ee787;
+}
+
+.hljs-params {
+  color: #e6edf3;
+}
+
+.hljs-built_in {
+  color: #ffa657;
+}
+
+.hljs-class .hljs-title,
+.hljs-title.class_ {
+  color: #f0883e;
+}
+
+.hljs-attr,
+.hljs-attribute {
+  color: #79c0ff;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #a5d6ff;
+}
+
+.hljs-meta {
+  color: #8b949e;
+}
+
+.hljs-selector-class,
+.hljs-selector-pseudo {
+  color: #7ee787;
+}
+
+.hljs-addition {
+  color: #aff5b4;
+  background-color: rgba(46, 160, 67, 0.15);
+}
+
+.hljs-deletion {
+  color: #ffdcd7;
+  background-color: rgba(248, 81, 73, 0.15);
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
 }
 
 /* Images */

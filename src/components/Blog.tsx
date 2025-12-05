@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { BLOG_DATA } from '../constants';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
@@ -24,7 +25,7 @@ const Blog: React.FC<BlogProps> = ({ isPreview = false, onViewAll }) => {
           {isPreview && onViewAll && (
             <button 
               onClick={onViewAll}
-              className="group flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-700"
+              className="group flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-700 cursor-pointer"
             >
               Read All Articles
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -42,41 +43,43 @@ const Blog: React.FC<BlogProps> = ({ isPreview = false, onViewAll }) => {
               transition={{ delay: idx * 0.1 }}
               className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-100 transition-all hover:shadow-xl"
             >
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={post.image} 
-                  alt={post.title} 
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute top-4 left-4 rounded-md bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-600 backdrop-blur">
-                  {post.category}
-                </div>
-              </div>
-              
-              <div className="flex flex-1 flex-col p-6">
-                <div className="mb-4 flex items-center gap-4 text-xs text-slate-500">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
-                    {post.date}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="h-3 w-3" />
-                    {post.readTime}
+              <Link href={`/blog/${post.slug}`} className="cursor-pointer">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title} 
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-4 left-4 rounded-md bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-600 backdrop-blur">
+                    {post.category}
                   </div>
                 </div>
                 
-                <h3 className="mb-3 text-xl font-bold text-slate-900 group-hover:text-primary-600 transition-colors">
-                  {post.title}
-                </h3>
-                <p className="mb-6 flex-1 text-sm text-slate-600 leading-relaxed">
-                  {post.excerpt}
-                </p>
-                
-                <button className="flex items-center gap-2 text-sm font-semibold text-primary-600 transition-colors group-hover:text-primary-700">
-                  Read Article
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="mb-4 flex items-center gap-4 text-xs text-slate-500">
+                    <div className="flex items-center gap-1">
+                      <Calendar className="h-3 w-3" />
+                      {post.date}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Clock className="h-3 w-3" />
+                      {post.readTime}
+                    </div>
+                  </div>
+                  
+                  <h3 className="mb-3 text-xl font-bold text-slate-900 group-hover:text-primary-600 transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="mb-6 flex-1 text-sm text-slate-600 leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                  
+                  <span className="flex items-center gap-2 text-sm font-semibold text-primary-600 transition-colors group-hover:text-primary-700">
+                    Read Article
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </div>
+              </Link>
             </motion.article>
           ))}
         </div>

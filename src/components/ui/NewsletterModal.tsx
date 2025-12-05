@@ -7,14 +7,14 @@ const NewsletterModal: React.FC = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
-  useEffect(() => {
-    // Show popup after 5 seconds
-    const timer = setTimeout(() => {
-      // Check if already dismissed in session storage (omitted for simplicity of demo)
-      setIsOpen(true);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   // Show popup after 5 seconds
+  //   const timer = setTimeout(() => {
+  //     // Check if already dismissed in session storage (omitted for simplicity of demo)
+  //     setIsOpen(true);
+  //   }, 5000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

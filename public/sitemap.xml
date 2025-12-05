@@ -1,33 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
   <url>
     <loc>https://mikehq.tech</loc>
-    <lastmod>2024-12-05</lastmod>
+    <lastmod>2025-12-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://mikehq.tech/projects</loc>
-    <lastmod>2024-12-05</lastmod>
+    <lastmod>2025-12-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mikehq.tech/research</loc>
-    <lastmod>2024-12-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikehq.tech/blog</loc>
-    <lastmod>2024-12-05</lastmod>
+    <lastmod>2025-12-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikehq.tech/research</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikehq.tech/contact</loc>
-    <lastmod>2024-12-05</lastmod>
+    <lastmod>2025-12-05</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://mikehq.tech/blog/future-of-mlops-beyond-model-training</loc>
+    <lastmod>2024-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikehq.tech/blog/demystifying-transformers-for-nlp</loc>
+    <lastmod>2024-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikehq.tech/blog/optimizing-aws-sagemaker-costs</loc>
+    <lastmod>2024-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Projects -->
+  <url>
+    <loc>https://mikehq.tech/projects/zwilt-ai-recruiter</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikehq.tech/projects/travel-price-predictor</loc>
+    <lastmod>2024-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikehq.tech/projects/activity-vision</loc>
+    <lastmod>2024-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikehq.tech/projects/neuro-net-vis</loc>
+    <lastmod>2023-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikehq.tech/projects/agro-detect</loc>
+    <lastmod>2023-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Research Papers -->
+  <url>
+    <loc>https://mikehq.tech/research/advancing-pediatric-brain-mapping</loc>
+    <lastmod>2024-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikehq.tech/research/accelerated-motion-correction-deep-learning</loc>
+    <lastmod>2024-03-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikehq.tech/research/harmonizing-tb-fmri-rs-fmri</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikehq.tech/research/brain-tumor-classification-gan</loc>
+    <lastmod>2023-08-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

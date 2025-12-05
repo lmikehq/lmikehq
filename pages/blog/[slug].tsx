@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import { getAllSlugs, getBlogPostBySlug, BlogMeta } from "@/lib/content";
 import Meta from "@/components/Meta";
+import CodeBlockEnhancer from "@/components/ui/CodeBlockEnhancer";
 
 interface BlogDetailProps {
   post: {
@@ -16,6 +17,7 @@ const BlogDetail = ({ post }: BlogDetailProps) => {
 
   return (
     <>
+      <CodeBlockEnhancer />
       <Meta
         title={`${meta.title} | Blog | MikeHQ`}
         description={meta.excerpt}
