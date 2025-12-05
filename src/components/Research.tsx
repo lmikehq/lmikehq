@@ -1,29 +1,35 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { RESEARCH_DATA } from '../constants';
-import { FileText, ArrowRight } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { RESEARCH_DATA } from "../constants";
+import { FileText, ArrowRight, FlaskConical } from "lucide-react";
 
 interface ResearchProps {
   isPreview?: boolean;
   onViewAll?: () => void;
 }
 
-const Research: React.FC<ResearchProps> = ({ isPreview = false, onViewAll }) => {
+const Research: React.FC<ResearchProps> = ({
+  isPreview = false,
+  onViewAll,
+}) => {
   const displayData = isPreview ? RESEARCH_DATA.slice(0, 2) : RESEARCH_DATA;
+  const isEmpty = displayData.length === 0;
 
   return (
-    <section className={`bg-white ${isPreview ? 'py-20' : 'pt-32 pb-20'}`}>
+    <section className={`bg-white ${isPreview ? "py-20" : "pt-32 pb-20"}`}>
       <div className="container mx-auto max-w-6xl px-6">
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900">{isPreview ? "Research & Publications" : "Research Lab"}</h2>
+            <h2 className="text-3xl font-bold text-slate-900">
+              {isPreview ? "Research & Publications" : "Research Lab"}
+            </h2>
             <p className="mt-4 text-slate-600">
               Exploring the frontiers of Medical AI and Generative Models.
             </p>
           </div>
-          {isPreview && onViewAll && (
-            <button 
+          {isPreview && onViewAll && !isEmpty && (
+            <button
               onClick={onViewAll}
               className="group flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-700 cursor-pointer"
             >
@@ -33,6 +39,21 @@ const Research: React.FC<ResearchProps> = ({ isPreview = false, onViewAll }) => 
           )}
         </div>
 
+        {isEmpty ? (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-col items-center justify-center py-16 text-center"
+          >
+            <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-slate-100">
+              <FlaskConical className="h-10 w-10 text-slate-400" />
+            </div>
+            <h3 className="text-xl font-semibold text-slate-700">Coming Soon</h3>
+            <p className="mt-2 max-w-md text-slate-500">
+              Research papers and publications are currently in the works. Check back soon for updates on my latest findings.
+            </p>
+          </motion.div>
+        ) : (
         <div className="space-y-6">
           {displayData.map((paper, idx) => (
             <Link key={paper.id} href={`/research/${paper.slug}`}>
@@ -46,12 +67,14 @@ const Research: React.FC<ResearchProps> = ({ isPreview = false, onViewAll }) => 
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-100 text-primary-600">
                   <FileText className="h-6 w-6" />
                 </div>
-                
+
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center gap-3 text-sm text-slate-500">
-                     <span className="font-semibold text-primary-600">{paper.conference}</span>
-                     <span>•</span>
-                     <span>{paper.date}</span>
+                    <span className="font-semibold text-primary-600">
+                      {paper.conference}
+                    </span>
+                    <span>•</span>
+                    <span>{paper.date}</span>
                   </div>
                   <h3 className="mt-2 text-xl font-bold text-slate-900 group-hover:text-primary-600 transition-colors">
                     {paper.title}
@@ -60,8 +83,11 @@ const Research: React.FC<ResearchProps> = ({ isPreview = false, onViewAll }) => 
                     {paper.abstract}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
-                    {paper.tags.map(tag => (
-                      <span key={tag} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-600 ring-1 ring-slate-200">
+                    {paper.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-600 ring-1 ring-slate-200"
+                      >
                         {tag}
                       </span>
                     ))}
@@ -76,8 +102,8 @@ const Research: React.FC<ResearchProps> = ({ isPreview = false, onViewAll }) => 
                 </div>
               </motion.div>
             </Link>
-          ))}
-        </div>
+          ))}n        </div>
+        )}
       </div>
     </section>
   );

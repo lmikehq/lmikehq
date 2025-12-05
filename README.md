@@ -179,17 +179,17 @@ Update the `Meta` component props in pages or modify defaults in `src/components
 
 ## 🔧 Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| [Next.js 16](https://nextjs.org/) | React framework with SSG/SSR |
-| [React 19](https://react.dev/) | UI library |
-| [TypeScript](https://www.typescriptlang.org/) | Type safety |
-| [Tailwind CSS 4](https://tailwindcss.com/) | Utility-first CSS |
-| [Framer Motion](https://www.framer.com/motion/) | Animations |
-| [Lucide React](https://lucide.dev/) | Icons |
+| Technology                                                  | Purpose                      |
+| ----------------------------------------------------------- | ---------------------------- |
+| [Next.js 16](https://nextjs.org/)                           | React framework with SSG/SSR |
+| [React 19](https://react.dev/)                              | UI library                   |
+| [TypeScript](https://www.typescriptlang.org/)               | Type safety                  |
+| [Tailwind CSS 4](https://tailwindcss.com/)                  | Utility-first CSS            |
+| [Framer Motion](https://www.framer.com/motion/)             | Animations                   |
+| [Lucide React](https://lucide.dev/)                         | Icons                        |
 | [gray-matter](https://github.com/jonschlinkert/gray-matter) | Markdown frontmatter parsing |
-| [remark](https://remark.js.org/) | Markdown processing |
-| [remark-gfm](https://github.com/remarkjs/remark-gfm) | GitHub Flavored Markdown |
+| [remark](https://remark.js.org/)                            | Markdown processing          |
+| [remark-gfm](https://github.com/remarkjs/remark-gfm)        | GitHub Flavored Markdown     |
 
 ## 📈 SEO Features
 
@@ -225,12 +225,12 @@ CMD ["npm", "start"]
 
 ## 📜 Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm start` | Start production server |
-| `npm run lint` | Run ESLint |
+| Command         | Description              |
+| --------------- | ------------------------ |
+| `npm run dev`   | Start development server |
+| `npm run build` | Build for production     |
+| `npm start`     | Start production server  |
+| `npm run lint`  | Run ESLint               |
 
 ## 📄 License
 
@@ -239,6 +239,7 @@ MIT License - feel free to use this template for your own portfolio!
 ## 👤 Author
 
 **Michael E. Adebisi**
+
 - Website: [mikehq.tech](https://mikehq.tech)
 - GitHub: [@lmikehq](https://github.com/lmikehq)
 

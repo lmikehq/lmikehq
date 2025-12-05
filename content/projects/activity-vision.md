@@ -4,7 +4,7 @@ title: "Activity Vision"
 slug: "activity-vision"
 category: "Computer Vision"
 description: "A productivity monitoring tool that uses OCR and image classification to categorize workflow states from screen captures in real-time."
-image: "https://picsum.photos/600/400?random=3"
+image: "/img/activity-vision.png"
 stats:
   - label: "Latency"
     value: "<100ms"
@@ -12,7 +12,8 @@ stats:
     value: "5k+"
 technologies:
   ["Python", "OpenCV", "TensorFlow", "Tesseract OCR", "Redis", "Electron"]
-github: "https://github.com/lmikehq/activity-vision"
+# github: "https://github.com/lmikehq/activity-vision"
+github: ""
 demo: ""
 featured: true
 date: "2022-11-10"

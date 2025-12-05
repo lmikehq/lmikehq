@@ -90,7 +90,6 @@ export function getAllContent<T>(
     };
   });
 
-  // Sort by date (newest first)
   return items.sort((a, b) => {
     const dateA = new Date((a.meta as any).date);
     const dateB = new Date((b.meta as any).date);
@@ -112,7 +111,6 @@ export async function getContentBySlug<T>(
   const fileContents = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContents);
 
-  // Convert markdown to HTML with GFM and syntax highlighting
   const processedContent = await unified()
     .use(remarkParse)
     .use(remarkGfm)
@@ -129,7 +127,6 @@ export async function getContentBySlug<T>(
   };
 }
 
-// Convenience functions
 export function getAllProjects() {
   return getAllContent<ProjectMeta>("projects");
 }

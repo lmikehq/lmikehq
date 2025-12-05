@@ -13,10 +13,8 @@ const ChatWidget: React.FC = () => {
     e.preventDefault();
     if (!inputValue.trim()) return;
 
-    // Add user message
     setMessages(prev => [...prev, { role: 'user', text: inputValue }]);
     
-    // Simulate AI delay and response
     setTimeout(() => {
       let response = "That's a great question! Mike specializes in building scalable ML pipelines and AI architectures. You should definitely reach out to him directly via the contact form!";
       

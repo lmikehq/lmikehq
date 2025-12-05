@@ -4,7 +4,6 @@ import { X } from 'lucide-react';
 import { ModalProps } from '../../types';
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
-  // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';

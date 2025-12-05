@@ -31,7 +31,7 @@ const About: React.FC = () => {
                 <span className="text-sm font-medium text-slate-500">Projects</span>
               </div>
               <div>
-                <span className="block text-3xl font-bold text-primary-600">03+</span>
+                <span className="block text-3xl font-bold text-primary-600">07+</span>
                 <span className="text-sm font-medium text-slate-500">Companies</span>
               </div>
             </div>

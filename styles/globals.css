@@ -279,6 +279,21 @@ html {
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
     "Liberation Mono", monospace;
   font-weight: 400;
+  display: block;
+  outline: none;
+}
+
+.article-content pre .editable-badge {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: #64748b;
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 0.25rem;
+  pointer-events: none;
 }
 
 /* Code block header with language label */

@@ -10,10 +10,8 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormState('submitting');
-    // Simulate network request
     setTimeout(() => {
       setFormState('success');
-      // Reset after showing success message
       setTimeout(() => setFormState('idle'), 3000);
     }, 1500);
   };

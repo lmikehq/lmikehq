@@ -4,14 +4,24 @@ import { useEffect } from "react";
 
 const CodeBlockEnhancer: React.FC = () => {
   useEffect(() => {
-    // Find all pre > code blocks in the article content
-    const codeBlocks = document.querySelectorAll(".article-content pre code");
+    const articleContent = document.querySelector(".article-content");
+    if (!articleContent) return;
+
+    const codeBlocks = articleContent.querySelectorAll("pre code");
+    if (codeBlocks.length === 0) return;
 
     codeBlocks.forEach((codeBlock) => {
       const pre = codeBlock.parentElement;
-      if (!pre || pre.querySelector(".copy-btn")) return; // Already enhanced
+      if (!pre || pre.querySelector(".copy-btn")) return;
 
-      // Get language from class (e.g., "language-python" or "hljs language-python")
+      (codeBlock as HTMLElement).contentEditable = "true";
+      (codeBlock as HTMLElement).spellcheck = false;
+
+      const badge = document.createElement("span");
+      badge.className = "editable-badge";
+      badge.textContent = "✏️ editable";
+      pre.appendChild(badge);
+
       const classes = codeBlock.className.split(" ");
       const langClass = classes.find(
         (c) => c.startsWith("language-") || c.startsWith("hljs-")
@@ -20,7 +30,6 @@ const CodeBlockEnhancer: React.FC = () => {
         ? langClass.replace("language-", "").replace("hljs-", "")
         : "code";
 
-      // Map common language names
       const langMap: Record<string, string> = {
         js: "JavaScript",
         ts: "TypeScript",
@@ -55,12 +64,11 @@ const CodeBlockEnhancer: React.FC = () => {
         text: "Text",
       };
 
-      const displayLang = langMap[language.toLowerCase()] || language.toUpperCase();
+      const displayLang =
+        langMap[language.toLowerCase()] || language.toUpperCase();
 
-      // Set language as data attribute for CSS
       pre.setAttribute("data-language", displayLang);
 
-      // Create copy button
       const copyBtn = document.createElement("button");
       copyBtn.className = "copy-btn";
       copyBtn.textContent = "📋";

@@ -21,8 +21,8 @@ export const PERSONAL_INFO = {
   title: "Machine Learning Engineer & AI Architect",
   tagline:
     "Translating complex data into actionable intelligence through scalable AI solutions.",
-  email: "dev.mike.llc@gmail.com",
-  location: "United States (Remote)",
+  email: "devmike.llc@gmail.com",
+  location: "Nigeria (remote)",
   socials: {
     github: "github.com/lmikehq",
     linkedin: "linkedin.com/in/mikeadebisi",
@@ -155,36 +155,38 @@ export const SERVICES_DATA = [
 export const TESTIMONIALS_DATA = [
   {
     id: 1,
-    name: "Sarah Jenkins",
-    role: "Product Manager at Checkin Inc",
+    name: "Zaid Jamshaid",
+    role: "Product Manager at Punch Group",
     content:
-      "Michael's ability to translate complex data requirements into a seamless recommendation engine was impressive. He doesn't just write code; he understands the business value of AI.",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+      "Mike is an elite, true full-stack engineer who builds complete applications. He architects robust, scalable back-end services designed to handle complex data and high-traffic performance demands. ",
+      // His understanding of system integrity ensures the final product is always fast, stable, and ready for production growth.",
+    avatar:
+      "https://media.licdn.com/dms/image/v2/D4D03AQFHZkpGAnIVsQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1725383574778?e=1766620800&v=beta&t=rCqtzkEoawY3iuTMu8AsaQPfeW_6teSv2TWytyOPIzA",
   },
   {
     id: 2,
-    name: "David Okon",
-    role: "CEO at Thrillers Group",
+    name: "Jude Okon",
+    role: "CEO at Checkin Inc",
     content:
-      "As our CTO, Mike transformed our entire infrastructure. His work on the pricing prediction algorithm directly increased our revenue by 15% in the first quarter.",
+      "Mike was a powerhouse for our frontend. He delivered the highly responsive, pixel-perfect user interface that was directly responsible for improving our customer conversion rates. We trust him completely.",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
   },
 ];
 
 export const PROJECTS_DATA: ProjectItem[] = [
-  {
-    id: 1,
-    title: "Zwilt AI Recruiter",
-    slug: "zwilt-ai-recruiter",
-    category: "NLP & Automation",
-    description:
-      "An automated recruitment platform utilizing Large Language Models to parse resumes and match candidates to job descriptions with 92% accuracy.",
-    image: "https://picsum.photos/600/400?random=1",
-    stats: [
-      { label: "Efficiency", value: "+40%" },
-      { label: "Accuracy", value: "92%" },
-    ],
-  },
+  // {
+  //   id: 1,
+  //   title: "Zwilt AI Recruiter",
+  //   slug: "zwilt-ai-recruiter",
+  //   category: "NLP & Automation",
+  //   description:
+  //     "An automated recruitment platform utilizing Large Language Models to parse resumes and match candidates to job descriptions with 92% accuracy.",
+  //   image: "https://picsum.photos/600/400?random=1",
+  //   stats: [
+  //     { label: "Efficiency", value: "+40%" },
+  //     { label: "Accuracy", value: "92%" },
+  //   ],
+  // },
   {
     id: 2,
     title: "Travel Price Predictor",
@@ -192,7 +194,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     category: "Predictive Analytics",
     description:
       "A time-series forecasting model deployed for Thrillers Travels that predicts optimal booking windows for flights and hotels to maximize revenue.",
-    image: "https://picsum.photos/600/400?random=2",
+    image: "img/price-predictor.png",
     stats: [
       { label: "Data Points", value: "10M+" },
       { label: "Rev. Impact", value: "High" },
@@ -205,123 +207,110 @@ export const PROJECTS_DATA: ProjectItem[] = [
     category: "Computer Vision",
     description:
       "A productivity monitoring tool that uses OCR and image classification to categorize workflow states from screen captures in real-time.",
-    image: "https://picsum.photos/600/400?random=3",
+    image: "img/activity-vision.png",
     stats: [
       { label: "Latency", value: "<100ms" },
       { label: "Users", value: "5k+" },
     ],
   },
-  {
-    id: 4,
-    title: "Neuro-Net Vis",
-    slug: "neuro-net-vis",
-    category: "Research Tool",
-    description:
-      "An interactive visualization dashboard for neural network layer activations, helping researchers debug deep learning models more effectively.",
-    image: "https://picsum.photos/600/400?random=4",
-    stats: [
-      { label: "Stars", value: "1.2k" },
-      { label: "Forks", value: "300+" },
-    ],
-  },
-  {
-    id: 5,
-    title: "Agro-Detect",
-    slug: "agro-detect",
-    category: "IoT & AI",
-    description:
-      "Deployed edge-AI models on Raspberry Pi devices to detect crop diseases in real-time using drone imagery.",
-    image: "https://picsum.photos/600/400?random=5",
-    stats: [
-      { label: "Accuracy", value: "95%" },
-      { label: "Devices", value: "50+" },
-    ],
-  },
+  // {
+  //   id: 4,
+  //   title: "Neuro-Net Vis",
+  //   slug: "neuro-net-vis",
+  //   category: "Research Tool",
+  //   description:
+  //     "An interactive visualization dashboard for neural network layer activations, helping researchers debug deep learning models more effectively.",
+  //   image: "https://picsum.photos/600/400?random=4",
+  //   stats: [
+  //     { label: "Stars", value: "1.2k" },
+  //     { label: "Forks", value: "300+" },
+  //   ],
+  // },
 ];
 
 export const RESEARCH_DATA: ResearchItem[] = [
-  {
-    id: 1,
-    title:
-      "Advancing Pediatric Brain Mapping: An AI-Driven Adaptive Functional MRI Pipeline",
-    slug: "advancing-pediatric-brain-mapping",
-    conference: "Radiological Society of North America (RSNA)",
-    date: "2024",
-    abstract:
-      "A self-supervised learning based adaptive pipeline for identification of paediatric functional brain networks, improving diagnostic accuracy in early development stages.",
-    link: "#",
-    tags: ["fMRI", "Deep Learning", "Healthcare"],
-  },
-  {
-    id: 2,
-    title:
-      "Accelerated Motion Correction with Deep Learning for Functional MRI",
-    slug: "accelerated-motion-correction-deep-learning",
-    conference: "Radiological Society of North America (RSNA)",
-    date: "2024",
-    abstract:
-      "A deep learning based accelerated motion correction pipeline for fMRI data using a Dual-Head ResNet Regressor to mitigate patient movement artifacts.",
-    link: "#",
-    tags: ["Computer Vision", "Medical Imaging", "ResNet"],
-  },
-  {
-    id: 3,
-    title:
-      "Harmonizing tb-fMRI and rs-fMRI: A Generative approach for mapping Language Networks",
-    slug: "harmonizing-tb-fmri-rs-fmri",
-    conference: "European Congress of Radiology",
-    date: "2024",
-    abstract:
-      "Utilizing generative modeling to map task-based fMRI analogous brain activity maps for Language network using rs-fMRI connectivity.",
-    link: "https://epos.myesr.org/poster/esr/ecr2024/C-11442",
-    tags: ["Generative AI", "Neuroscience", "GANs"],
-  },
-  {
-    id: 4,
-    title:
-      "Brain Tumor Classification using a Pre-Trained Auxiliary Classifying GAN",
-    slug: "brain-tumor-classification-gan",
-    conference: "Journal of Medical Systems",
-    date: "2023",
-    abstract:
-      "An auxiliary classifying conditional generative adversarial network based on StyleGAN, achieving ~99.5% accuracy in classifying Glioma, Meningioma, & Pituitary Brain Tumors.",
-    link: "https://doi.org/10.1007/s10916-023-01932-x",
-    tags: ["StyleGAN", "Oncology", "Classification"],
-  },
+  // {
+  //   id: 1,
+  //   title:
+  //     "Advancing Pediatric Brain Mapping: An AI-Driven Adaptive Functional MRI Pipeline",
+  //   slug: "advancing-pediatric-brain-mapping",
+  //   conference: "Radiological Society of North America (RSNA)",
+  //   date: "2024",
+  //   abstract:
+  //     "A self-supervised learning based adaptive pipeline for identification of paediatric functional brain networks, improving diagnostic accuracy in early development stages.",
+  //   link: "#",
+  //   tags: ["fMRI", "Deep Learning", "Healthcare"],
+  // },
+  // {
+  //   id: 2,
+  //   title:
+  //     "Accelerated Motion Correction with Deep Learning for Functional MRI",
+  //   slug: "accelerated-motion-correction-deep-learning",
+  //   conference: "Radiological Society of North America (RSNA)",
+  //   date: "2024",
+  //   abstract:
+  //     "A deep learning based accelerated motion correction pipeline for fMRI data using a Dual-Head ResNet Regressor to mitigate patient movement artifacts.",
+  //   link: "#",
+  //   tags: ["Computer Vision", "Medical Imaging", "ResNet"],
+  // },
+  // {
+  //   id: 3,
+  //   title:
+  //     "Harmonizing tb-fMRI and rs-fMRI: A Generative approach for mapping Language Networks",
+  //   slug: "harmonizing-tb-fmri-rs-fmri",
+  //   conference: "European Congress of Radiology",
+  //   date: "2024",
+  //   abstract:
+  //     "Utilizing generative modeling to map task-based fMRI analogous brain activity maps for Language network using rs-fMRI connectivity.",
+  //   link: "https://epos.myesr.org/poster/esr/ecr2024/C-11442",
+  //   tags: ["Generative AI", "Neuroscience", "GANs"],
+  // },
+  // {
+  //   id: 4,
+  //   title:
+  //     "Brain Tumor Classification using a Pre-Trained Auxiliary Classifying GAN",
+  //   slug: "brain-tumor-classification-gan",
+  //   conference: "Journal of Medical Systems",
+  //   date: "2023",
+  //   abstract:
+  //     "An auxiliary classifying conditional generative adversarial network based on StyleGAN, achieving ~99.5% accuracy in classifying Glioma, Meningioma, & Pituitary Brain Tumors.",
+  //   link: "https://doi.org/10.1007/s10916-023-01932-x",
+  //   tags: ["StyleGAN", "Oncology", "Classification"],
+  // },
 ];
 
 export const BLOG_DATA: BlogPost[] = [
-  {
-    id: 1,
-    title: "The Future of MLOps: Beyond Model Training",
-    slug: "future-of-mlops-beyond-model-training",
-    excerpt:
-      "Why the real challenge in AI adoption isn't building the model, but maintaining it in production at scale.",
-    date: "Oct 12, 2024",
-    readTime: "5 min read",
-    category: "MLOps",
-    image: "https://picsum.photos/800/600?random=10",
-  },
-  {
-    id: 2,
-    title: "Demystifying Transformers for NLP",
-    slug: "demystifying-transformers-for-nlp",
-    excerpt:
-      "A deep dive into the architecture that changed Natural Language Processing forever, explained simply.",
-    date: "Sep 28, 2024",
-    readTime: "8 min read",
-    category: "Deep Learning",
-    image: "https://picsum.photos/800/600?random=11",
-  },
-  {
-    id: 3,
-    title: "Optimizing AWS SageMaker Costs",
-    slug: "optimizing-aws-sagemaker-costs",
-    excerpt:
-      "Practical strategies for managing cloud infrastructure costs when training large language models.",
-    date: "Aug 15, 2024",
-    readTime: "6 min read",
-    category: "Cloud Engineering",
-    image: "https://picsum.photos/800/600?random=12",
-  },
+  // {
+  //   id: 1,
+  //   title: "The Future of MLOps: Beyond Model Training",
+  //   slug: "future-of-mlops-beyond-model-training",
+  //   excerpt:
+  //     "Why the real challenge in AI adoption isn't building the model, but maintaining it in production at scale.",
+  //   date: "Oct 12, 2024",
+  //   readTime: "5 min read",
+  //   category: "MLOps",
+  //   image: "https://picsum.photos/800/600?random=10",
+  // },
+  // {
+  //   id: 2,
+  //   title: "Demystifying Transformers for NLP",
+  //   slug: "demystifying-transformers-for-nlp",
+  //   excerpt:
+  //     "A deep dive into the architecture that changed Natural Language Processing forever, explained simply.",
+  //   date: "Sep 28, 2024",
+  //   readTime: "8 min read",
+  //   category: "Deep Learning",
+  //   image: "https://picsum.photos/800/600?random=11",
+  // },
+  // {
+  //   id: 3,
+  //   title: "Optimizing AWS SageMaker Costs",
+  //   slug: "optimizing-aws-sagemaker-costs",
+  //   excerpt:
+  //     "Practical strategies for managing cloud infrastructure costs when training large language models.",
+  //   date: "Aug 15, 2024",
+  //   readTime: "6 min read",
+  //   category: "Cloud Engineering",
+  //   image: "https://picsum.photos/800/600?random=12",
+  // },
 ];

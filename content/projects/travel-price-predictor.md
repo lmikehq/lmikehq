@@ -4,7 +4,7 @@ title: "Travel Price Predictor"
 slug: "travel-price-predictor"
 category: "Predictive Analytics"
 description: "A time-series forecasting model deployed for Thrillers Travels that predicts optimal booking windows for flights and hotels to maximize revenue."
-image: "https://picsum.photos/600/400?random=2"
+image: "/img/price-predictor.png"
 stats:
   - label: "Data Points"
     value: "10M+"
@@ -77,7 +77,7 @@ The entire system runs on AWS SageMaker with:
 
 - **15% increase** in revenue from dynamic pricing
 - **23% improvement** in booking conversion rates
-- **$500K+ saved** annually from optimized inventory
+- **$50K+ saved** annually from optimized inventory
 - **Real-time predictions** in under 100ms
 
 ## Key Insights
