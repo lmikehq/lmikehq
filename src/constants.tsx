@@ -1,18 +1,13 @@
 import {
-  Bot,
   Brain,
   Cloud,
-  Code,
-  Database,
-  Globe,
-  Layers,
-  Server,
-  Terminal,
   Cpu,
   LineChart,
+  Server,
+  Terminal,
   Zap,
 } from "lucide-react";
-import { ExperienceItem, ProjectItem, ResearchItem, BlogPost } from "./types";
+import { BlogPost, ExperienceItem, ProjectItem, ResearchItem } from "./types";
 
 // Transformed content from resume to focus on ML/AI
 export const PERSONAL_INFO = {
@@ -34,44 +29,87 @@ export const PERSONAL_INFO = {
 export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
     id: 1,
-    role: "Chief Technology Officer (AI & Infra)",
-    company: "Thrillers Travels Ltd",
-    period: "Apr 2023 - Present",
+    role: "Lead MLE & Technical Project Lead",
+    company: "Zentira",
+    period: "March 2025 - Present",
     description:
-      "Spearheaded the integration of predictive modeling for pricing algorithms. Orchestrated ML ops pipelines on AWS SageMaker, automating model retraining and deployment. Managed a data-centric architecture handling over 10,000 users and 500M NGN revenue.",
-    tags: ["AWS SageMaker", "Python", "Predictive Modeling", "MLOps"],
+      "Hold dual responsibility for leading the technical direction and execution of Machine Learning initiatives.",
+    tags: [
+      "MLOps",
+      "Technical Leadership",
+      "Project Management",
+      "AWS",
+      "Machine Learning",
+    ],
   },
   {
     id: 2,
-    role: "Staff ML Engineer",
-    company: "Checkin Inc",
-    period: "Aug 2022 - July 2023",
+    role: "Chief Technology Officer",
+    company: "Thrillers Travels Ltd, Lagos Nigeria",
+    period: "April 2023 - March 2025",
     description:
-      "Led the development of recommendation engines using collaborative filtering. Analyzed vast application usage datasets to identify behavioral patterns, directly influencing product roadmap via data-driven insights. Optimized Python-based data processing pipelines.",
+      "Provided strategic leadership for technology initiatives, achieving company growth to serve over 10,000 users and $500k in annual revenue.",
+      // Spearheaded all infrastructure and DevOps operations on AWS, including CI/CD pipeline optimization with AWS CodeBuild and CodeCommit.",
     tags: [
-      "Recommendation Systems",
-      "Data Analytics",
-      "Pandas",
-      "Scikit-Learn",
+      "AWS",
+      "DevOps",
+      "CI/CD",
+      "PostgreSQL",
+      "Team Leadership",
+      "API Design",
     ],
   },
   {
     id: 3,
-    role: "AI Integration Engineer",
-    company: "Punch Group",
-    period: "Mar 2022 - June 2023",
+    role: "Staff Software Engineer",
+    company: "Checkin Inc, United States (Remote)",
+    period: "Aug 2022 - July 2023",
     description:
-      "Developed 'Zwilt Tracker', utilizing Computer Vision to analyze user activity via screenshot processing. Incorporated NLP algorithms into recruitment processes for automated candidate screening, improving hiring efficiency by 40%.",
-    tags: ["Computer Vision", "NLP", "OpenCV", "TensorFlow"],
+      "Collaborated extensively with product, UX/UI, and data science teams to refine project requirements and user stories.",
+      //  Conducted code reviews, provided constructive feedback, and monitored application usage to implement data-driven optimizations and influence product quality.",
+    tags: [
+      "Agile",
+      "Collaboration",
+      "Code Reviews",
+      "Product Development",
+      "Data Analysis",
+    ],
   },
   {
     id: 4,
-    role: "Full Stack Data Engineer",
-    company: "Thrillers Group Inc",
-    period: "Feb 2021 - Mar 2022",
+    role: "Software Engineer",
+    company: "Punch Group, United States (Remote)",
+    period: "March 2022 - June 2023",
     description:
-      "Designed scalable RESTful APIs serving machine learning model inference. Built internal dashboards for visualizing model performance metrics using Python Django and React.",
-    tags: ["Django", "API Design", "Data Visualization", "Full Stack"],
+      "Led a team of 12 developers across various projects. Key developer for 'Zwilt Tracker', built AI pipeline for candidate screening and many more projects",
+      
+      // a React Native application for AI pipeline analysis of customer activity. Integrated AI algorithms for automated candidate screening, and built a comprehensive E-Commerce platform fully integrated with the Amazon store.",
+    tags: [
+      "Team Leadership",
+      "React Native",
+      "AI/ML",
+      "E-Commerce",
+      "Computer Vision",
+      "Full Stack",
+    ],
+  },
+  {
+    id: 5,
+    role: "Full Stack Developer",
+    company: "Thrillers Group Inc, Lagos, Nigeria",
+    period: "Feb 2021 – March 2022",
+    description:
+      "Developed cloud-based software products using Python Django. Designed and created scalable RESTful APIs for internal and partner consumption. ",
+      // Worked closely with front-end developers, utilizing an in-house Redux Toolkit solution, and converting high-fidelity mockups into responsive web code.",
+    tags: [
+      "Python",
+      "Django",
+      "RESTful API",
+      "React",
+      "Redux Toolkit",
+      "Full Stack",
+      "Agile",
+    ],
   },
 ];
 
@@ -159,7 +197,7 @@ export const TESTIMONIALS_DATA = [
     role: "Product Manager at Punch Group",
     content:
       "Mike is an elite, true full-stack engineer who builds complete applications. He architects robust, scalable back-end services designed to handle complex data and high-traffic performance demands. ",
-      // His understanding of system integrity ensures the final product is always fast, stable, and ready for production growth.",
+    // His understanding of system integrity ensures the final product is always fast, stable, and ready for production growth.",
     avatar:
       "https://media.licdn.com/dms/image/v2/D4D03AQFHZkpGAnIVsQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1725383574778?e=1766620800&v=beta&t=rCqtzkEoawY3iuTMu8AsaQPfeW_6teSv2TWytyOPIzA",
   },

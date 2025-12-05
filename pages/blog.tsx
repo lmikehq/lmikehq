@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Calendar, Clock, ArrowRight, PenLine } from "lucide-react";
 import { getAllBlogPosts, BlogMeta } from "@/lib/content";
 import Meta from "@/components/Meta";
 
@@ -10,6 +10,8 @@ interface BlogPageProps {
 }
 
 const BlogPage = ({ posts }: BlogPageProps) => {
+  const isEmpty = posts.length === 0;
+
   return (
     <>
       <Meta
@@ -29,6 +31,21 @@ const BlogPage = ({ posts }: BlogPageProps) => {
             </p>
           </div>
 
+          {isEmpty ? (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex flex-col items-center justify-center py-20 text-center"
+            >
+              <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-white shadow-sm">
+                <PenLine className="h-12 w-12 text-slate-400" />
+              </div>
+              <h2 className="text-2xl font-semibold text-slate-700">Coming Soon</h2>
+              <p className="mt-3 max-w-md text-slate-500">
+                Blog articles are on the way. Stay tuned for insights on AI, ML engineering, and tech architecture.
+              </p>
+            </motion.div>
+          ) : (
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post, idx) => (
               <motion.article
@@ -83,8 +100,8 @@ const BlogPage = ({ posts }: BlogPageProps) => {
                   </div>
                 </Link>
               </motion.article>
-            ))}
-          </div>
+            ))}n          </div>
+          )}
         </div>
       </section>
     </>

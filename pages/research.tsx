@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FileText, ExternalLink, ArrowRight } from "lucide-react";
+import { FileText, ExternalLink, ArrowRight, FlaskConical } from "lucide-react";
 import { getAllResearch, ResearchMeta } from "@/lib/content";
 import Meta from "@/components/Meta";
 
@@ -10,6 +10,8 @@ interface ResearchPageProps {
 }
 
 const ResearchPage = ({ papers }: ResearchPageProps) => {
+  const isEmpty = papers.length === 0;
+
   return (
     <>
       <Meta
@@ -26,6 +28,21 @@ const ResearchPage = ({ papers }: ResearchPageProps) => {
             </p>
           </div>
 
+          {isEmpty ? (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex flex-col items-center justify-center py-20 text-center"
+            >
+              <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-slate-100">
+                <FlaskConical className="h-12 w-12 text-slate-400" />
+              </div>
+              <h2 className="text-2xl font-semibold text-slate-700">Coming Soon</h2>
+              <p className="mt-3 max-w-md text-slate-500">
+                Research papers and publications are currently in the works. Check back soon for updates on my latest findings.
+              </p>
+            </motion.div>
+          ) : (
           <div className="space-y-6">
             {papers.map((paper, idx) => (
               <motion.div
@@ -88,8 +105,8 @@ const ResearchPage = ({ papers }: ResearchPageProps) => {
                   )}
                 </div>
               </motion.div>
-            ))}
-          </div>
+            ))}n          </div>
+          )}
         </div>
       </section>
     </>
