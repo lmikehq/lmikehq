@@ -1,20 +1,68 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, MapPin, Send, CheckCircle, Loader2 } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle, Loader2, AlertCircle } from "lucide-react";
 import { PERSONAL_INFO } from "../constants";
+import emailjs from "@emailjs/browser";
 
 const Contact: React.FC = () => {
-  const [formState, setFormState] = useState<"idle" | "submitting" | "success">(
+  const formRef = useRef<HTMLFormElement>(null);
+  const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">(
     "idle"
   );
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formRef.current) return;
+
     setFormState("submitting");
-    setTimeout(() => {
+    setErrorMessage("");
+
+    const formData = new FormData(formRef.current);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+    const notificationTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_NOTIFICATION!;
+    const acknowledgmentTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ACKNOWLEDGMENT!;
+
+    try {
+      await emailjs.send(
+        serviceId,
+        notificationTemplateId,
+        {
+          name,
+          email,
+          message,
+          timestamp: new Date().toLocaleString(),
+        },
+        publicKey
+      );
+
+      await emailjs.send(
+        serviceId,
+        acknowledgmentTemplateId,
+        {
+          to_email: email,
+          to_name: name,
+          name,
+          email,
+          message,
+        },
+        publicKey
+      );
+
       setFormState("success");
-      setTimeout(() => setFormState("idle"), 3000);
-    }, 1500);
+      formRef.current.reset();
+      setTimeout(() => setFormState("idle"), 5000);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setFormState("error");
+      setErrorMessage("Failed to send message. Please try again or email me directly.");
+      setTimeout(() => setFormState("idle"), 5000);
+    }
   };
 
   return (
@@ -87,9 +135,28 @@ const Contact: React.FC = () => {
                       I'll get back to you as soon as possible.
                     </p>
                   </motion.div>
+                ) : formState === "error" ? (
+                  <motion.div
+                    key="error"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    className="flex h-full flex-col items-center justify-center text-center py-10"
+                  >
+                    <div className="mb-4 rounded-full bg-red-100 p-3 text-red-600">
+                      <AlertCircle className="h-8 w-8" />
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900">
+                      Oops! Something went wrong
+                    </h3>
+                    <p className="mt-2 text-slate-500">
+                      {errorMessage}
+                    </p>
+                  </motion.div>
                 ) : (
                   <motion.form
                     key="form"
+                    ref={formRef}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -106,6 +173,7 @@ const Contact: React.FC = () => {
                       <input
                         type="text"
                         id="name"
+                        name="name"
                         required
                         className="w-full rounded-lg border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-900 placeholder:text-slate-400 focus:border-primary-500 focus:ring-primary-500"
                         placeholder="John Doe"
@@ -121,6 +189,7 @@ const Contact: React.FC = () => {
                       <input
                         type="email"
                         id="email"
+                        name="email"
                         required
                         className="w-full rounded-lg border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-900 placeholder:text-slate-400 focus:border-primary-500 focus:ring-primary-500"
                         placeholder="john@example.com"
@@ -135,6 +204,7 @@ const Contact: React.FC = () => {
                       </label>
                       <textarea
                         id="message"
+                        name="message"
                         required
                         rows={4}
                         className="w-full rounded-lg border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-900 placeholder:text-slate-400 focus:border-primary-500 focus:ring-primary-500"
