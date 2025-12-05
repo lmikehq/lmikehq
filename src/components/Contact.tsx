@@ -1,14 +1,21 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, MapPin, Send, CheckCircle, Loader2, AlertCircle } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Send,
+  CheckCircle,
+  Loader2,
+  AlertCircle,
+} from "lucide-react";
 import { PERSONAL_INFO } from "../constants";
 import emailjs from "@emailjs/browser";
 
 const Contact: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">(
-    "idle"
-  );
+  const [formState, setFormState] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -25,8 +32,10 @@ const Contact: React.FC = () => {
 
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
-    const notificationTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_NOTIFICATION!;
-    const acknowledgmentTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ACKNOWLEDGMENT!;
+    const notificationTemplateId =
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_NOTIFICATION!;
+    const acknowledgmentTemplateId =
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ACKNOWLEDGMENT!;
 
     try {
       await emailjs.send(
@@ -60,7 +69,9 @@ const Contact: React.FC = () => {
     } catch (error) {
       console.error("EmailJS error:", error);
       setFormState("error");
-      setErrorMessage("Failed to send message. Please try again or email me directly.");
+      setErrorMessage(
+        "Failed to send message. Please try again or email me directly."
+      );
       setTimeout(() => setFormState("idle"), 5000);
     }
   };
@@ -149,9 +160,7 @@ const Contact: React.FC = () => {
                     <h3 className="text-xl font-bold text-slate-900">
                       Oops! Something went wrong
                     </h3>
-                    <p className="mt-2 text-slate-500">
-                      {errorMessage}
-                    </p>
+                    <p className="mt-2 text-slate-500">{errorMessage}</p>
                   </motion.div>
                 ) : (
                   <motion.form
