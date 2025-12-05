@@ -1,18 +1,19 @@
-
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react';
-import { PERSONAL_INFO } from '../constants';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Mail, MapPin, Send, CheckCircle, Loader2 } from "lucide-react";
+import { PERSONAL_INFO } from "../constants";
 
 const Contact: React.FC = () => {
-  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [formState, setFormState] = useState<"idle" | "submitting" | "success">(
+    "idle"
+  );
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setFormState('submitting');
+    setFormState("submitting");
     setTimeout(() => {
-      setFormState('success');
-      setTimeout(() => setFormState('idle'), 3000);
+      setFormState("success");
+      setTimeout(() => setFormState("idle"), 3000);
     }, 1500);
   };
 
@@ -25,14 +26,13 @@ const Contact: React.FC = () => {
           <div className="absolute bottom-0 left-0 -mb-10 -ml-10 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl"></div>
 
           <div className="relative grid gap-12 md:grid-cols-2">
-            
             {/* Contact Info */}
             <div className="flex flex-col justify-between">
               <div>
                 <h2 className="text-3xl font-bold text-white">Let's Connect</h2>
                 <p className="mt-4 text-slate-400 leading-relaxed">
-                  Interested in collaborating on AI projects or have a role in mind? 
-                  I'm always open to discussing new opportunities.
+                  Interested in collaborating on AI projects or have a role in
+                  mind? I'm always open to discussing new opportunities.
                 </p>
               </div>
 
@@ -43,7 +43,10 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-slate-400">Email</p>
-                    <a href={`mailto:${PERSONAL_INFO.email}`} className="text-white hover:text-primary-400 transition-colors">
+                    <a
+                      href={`mailto:${PERSONAL_INFO.email}`}
+                      className="text-white hover:text-primary-400 transition-colors"
+                    >
                       {PERSONAL_INFO.email}
                     </a>
                   </div>
@@ -54,7 +57,9 @@ const Contact: React.FC = () => {
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-slate-400">Location</p>
+                    <p className="text-sm font-medium text-slate-400">
+                      Location
+                    </p>
                     <p className="text-white">{PERSONAL_INFO.location}</p>
                   </div>
                 </div>
@@ -63,8 +68,8 @@ const Contact: React.FC = () => {
 
             {/* Form */}
             <div className="relative rounded-2xl bg-white p-6 md:p-8">
-              <AnimatePresence mode='wait'>
-                {formState === 'success' ? (
+              <AnimatePresence mode="wait">
+                {formState === "success" ? (
                   <motion.div
                     key="success"
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -75,8 +80,12 @@ const Contact: React.FC = () => {
                     <div className="mb-4 rounded-full bg-green-100 p-3 text-green-600">
                       <CheckCircle className="h-8 w-8" />
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900">Message Sent!</h3>
-                    <p className="mt-2 text-slate-500">I'll get back to you as soon as possible.</p>
+                    <h3 className="text-xl font-bold text-slate-900">
+                      Message Sent!
+                    </h3>
+                    <p className="mt-2 text-slate-500">
+                      I'll get back to you as soon as possible.
+                    </p>
                   </motion.div>
                 ) : (
                   <motion.form
@@ -88,7 +97,10 @@ const Contact: React.FC = () => {
                     className="space-y-4"
                   >
                     <div>
-                      <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-slate-700">
+                      <label
+                        htmlFor="name"
+                        className="mb-1.5 block text-sm font-medium text-slate-700"
+                      >
                         Name
                       </label>
                       <input
@@ -100,7 +112,10 @@ const Contact: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-slate-700">
+                      <label
+                        htmlFor="email"
+                        className="mb-1.5 block text-sm font-medium text-slate-700"
+                      >
                         Email
                       </label>
                       <input
@@ -112,7 +127,10 @@ const Contact: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-slate-700">
+                      <label
+                        htmlFor="message"
+                        className="mb-1.5 block text-sm font-medium text-slate-700"
+                      >
                         Message
                       </label>
                       <textarea
@@ -125,10 +143,10 @@ const Contact: React.FC = () => {
                     </div>
                     <button
                       type="submit"
-                      disabled={formState === 'submitting'}
+                      disabled={formState === "submitting"}
                       className="mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition-all hover:bg-primary-700 disabled:opacity-70"
                     >
-                      {formState === 'submitting' ? (
+                      {formState === "submitting" ? (
                         <Loader2 className="h-5 w-5 animate-spin" />
                       ) : (
                         <>
