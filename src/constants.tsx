@@ -15,7 +15,7 @@ export const PERSONAL_INFO = {
   brand: "MikeHQ",
   title: "Machine Learning Engineer & AI Architect",
   tagline:
-    "Translating complex data into actionable intelligence through scalable AI solutions.",
+    "Allegedly a cracked engineer, contact me to see for yourself!",
   email: "devmike.llc@gmail.com",
   location: "Nigeria (remote)",
   socials: {
@@ -96,7 +96,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
     id: 5,
     role: "Full Stack Developer",
-    company: "Thrillers Group Inc, Lagos, Nigeria",
+    company: "Thrillers Group Inc, Abuja, Nigeria",
     period: "Feb 2021 – March 2022",
     description:
       "Developed cloud-based software products using Python Django. Designed and created scalable RESTful APIs for internal and partner consumption. ",

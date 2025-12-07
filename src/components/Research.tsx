@@ -17,7 +17,11 @@ const Research: React.FC<ResearchProps> = ({
   const isEmpty = displayData.length === 0;
 
   return (
-    <section className={`bg-white ${isPreview ? "py-20" : "pt-32 pb-20"}`}>
+    <section
+      className={`relative bg-white ${isPreview ? "py-24" : "pt-32 pb-24"}`}
+    >
+      {/* Subtle top divider */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       <div className="container mx-auto max-w-6xl px-6">
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>

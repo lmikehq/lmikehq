@@ -30,6 +30,68 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Section dividers */
+.section-divider {
+  position: relative;
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  opacity: 0.3;
+}
+
+/* Dark mode support */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  @apply bg-slate-900 text-slate-100;
+}
+
+.dark .bg-white {
+  @apply bg-slate-800;
+}
+
+.dark .bg-slate-50 {
+  @apply bg-slate-900;
+}
+
+.dark .text-slate-900 {
+  @apply text-slate-100;
+}
+
+.dark .text-slate-600 {
+  @apply text-slate-300;
+}
+
+.dark .text-slate-500 {
+  @apply text-slate-400;
+}
+
+.dark .border-slate-100 {
+  @apply border-slate-700;
+}
+
+.dark .ring-slate-100 {
+  @apply ring-slate-700;
+}
+
+.dark .shadow-sm {
+  @apply shadow-slate-900/50;
+}
+
+.dark .shadow-xl {
+  @apply shadow-slate-900/80;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

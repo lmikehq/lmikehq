@@ -25,13 +25,13 @@ const Home: React.FC = () => {
         }}
       />
       <Projects isPreview={true} onViewAll={() => router.push("/projects")} />
-      <Services />
-      <Research isPreview={true} onViewAll={() => router.push("/research")} />
-      <Skills />
-      <Experience />
       <Blog isPreview={true} onViewAll={() => router.push("/blog")} />
-      <Testimonials />
-      <About />
+      <Research isPreview={true} onViewAll={() => router.push("/research")} />
+      <Experience />
+      {/* <Services /> */}
+      {/* <Skills /> */}
+      {/* <Testimonials /> */}
+      {/* <About /> */}
       <Contact />
     </>
   );

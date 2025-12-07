@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -15,6 +15,8 @@ const navLinks = [
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -24,6 +26,41 @@ const Navbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setMounted(true);
+    // Check localStorage first, then system preference
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const initialTheme = savedTheme || (mediaQuery.matches ? "dark" : "light");
+    setTheme(initialTheme);
+
+    if (initialTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+    // Listen for system theme changes only if no saved preference
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (!localStorage.getItem("theme")) {
+        const newTheme = e.matches ? "dark" : "light";
+        setTheme(newTheme);
+        document.documentElement.classList.toggle("dark", e.matches);
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+  };
 
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -64,6 +101,19 @@ const Navbar: React.FC = () => {
               {link.name}
             </Link>
           ))}
+          {mounted && (
+            <button
+              onClick={toggleTheme}
+              className="rounded-full p-2 text-slate-600 transition-colors hover:bg-slate-100 hover:text-primary-600"
+              aria-label="Toggle theme"
+            >
+              {theme === "light" ? (
+                <Moon className="h-5 w-5" />
+              ) : (
+                <Sun className="h-5 w-5" />
+              )}
+            </button>
+          )}
           <Link
             href="/contact"
             className="rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition-transform hover:bg-slate-800 hover:scale-105"
@@ -72,14 +122,29 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button className="md:hidden" onClick={handleMobileMenuToggle}>
-          {isMobileMenuOpen ? (
-            <X className="h-6 w-6 text-slate-900" />
-          ) : (
-            <Menu className="h-6 w-6 text-slate-900" />
+        {/* Mobile Menu Button and Theme Toggle */}
+        <div className="flex items-center gap-3 md:hidden">
+          {mounted && (
+            <button
+              onClick={toggleTheme}
+              className="rounded-full p-2 text-slate-600 transition-colors hover:bg-slate-100"
+              aria-label="Toggle theme"
+            >
+              {theme === "light" ? (
+                <Moon className="h-5 w-5" />
+              ) : (
+                <Sun className="h-5 w-5" />
+              )}
+            </button>
           )}
-        </button>
+          <button onClick={handleMobileMenuToggle}>
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6 text-slate-900" />
+            ) : (
+              <Menu className="h-6 w-6 text-slate-900" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav Overlay */}

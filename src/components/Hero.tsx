@@ -115,36 +115,6 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
                 className="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
               />
             </div>
-
-            {/* Floating skill pills */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute top-10 -left-4 rounded-xl bg-white p-3 shadow-xl"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                className="h-8 w-8"
-                alt="Python"
-              />
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{
-                repeat: Infinity,
-                duration: 5,
-                ease: "easeInOut",
-                delay: 1,
-              }}
-              className="absolute bottom-10 -right-4 rounded-xl bg-white p-3 shadow-xl"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-                className="h-8 w-8"
-                alt="TF"
-              />
-            </motion.div>
           </div>
         </motion.div>
       </div>
