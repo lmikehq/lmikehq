@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto max-w-4xl px-6">
-        <div className="rounded-3xl bg-slate-900 px-6 py-12 md:px-12 md:py-16 shadow-2xl overflow-hidden relative">
+        <div className="rounded-3xl bg-slate-900 dark:bg-slate-800 px-6 py-12 md:px-12 md:py-16 shadow-2xl overflow-hidden relative">
           {/* Background decorative elements */}
           <div className="absolute top-0 right-0 -mt-10 -mr-10 h-64 w-64 rounded-full bg-primary-500/20 blur-3xl"></div>
           <div className="absolute bottom-0 left-0 -mb-10 -ml-10 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl"></div>
@@ -127,7 +127,7 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Form */}
-            <div className="relative rounded-2xl bg-white p-6 md:p-8">
+            <div className="relative rounded-2xl bg-white dark:bg-slate-900 p-6 md:p-8">
               <AnimatePresence mode="wait">
                 {formState === "success" ? (
                   <motion.div
@@ -140,10 +140,10 @@ const Contact: React.FC = () => {
                     <div className="mb-4 rounded-full bg-green-100 p-3 text-green-600">
                       <CheckCircle className="h-8 w-8" />
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                       Message Sent!
                     </h3>
-                    <p className="mt-2 text-slate-500">
+                    <p className="mt-2 text-slate-500 dark:text-slate-400">
                       I'll get back to you as soon as possible.
                     </p>
                   </motion.div>
@@ -158,10 +158,10 @@ const Contact: React.FC = () => {
                     <div className="mb-4 rounded-full bg-red-100 p-3 text-red-600">
                       <AlertCircle className="h-8 w-8" />
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                       Oops! Something went wrong
                     </h3>
-                    <p className="mt-2 text-slate-500">{errorMessage}</p>
+                    <p className="mt-2 text-slate-500 dark:text-slate-400">{errorMessage}</p>
                   </motion.div>
                 ) : (
                   <motion.form
@@ -176,7 +176,7 @@ const Contact: React.FC = () => {
                     <div>
                       <label
                         htmlFor="name"
-                        className="mb-1.5 block text-sm font-medium text-slate-700"
+                        className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300"
                       >
                         Name
                       </label>
@@ -185,14 +185,14 @@ const Contact: React.FC = () => {
                         id="name"
                         name="name"
                         required
-                        className="w-full rounded-lg border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-900 placeholder:text-slate-400 focus:border-primary-500 focus:ring-primary-500"
+                        className="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-primary-500 focus:ring-primary-500"
                         placeholder="John Doe"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="email"
-                        className="mb-1.5 block text-sm font-medium text-slate-700"
+                        className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300"
                       >
                         Email
                       </label>
@@ -201,14 +201,14 @@ const Contact: React.FC = () => {
                         id="email"
                         name="email"
                         required
-                        className="w-full rounded-lg border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-900 placeholder:text-slate-400 focus:border-primary-500 focus:ring-primary-500"
+                        className="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-primary-500 focus:ring-primary-500"
                         placeholder="john@example.com"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="message"
-                        className="mb-1.5 block text-sm font-medium text-slate-700"
+                        className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300"
                       >
                         Message
                       </label>
@@ -217,7 +217,7 @@ const Contact: React.FC = () => {
                         name="message"
                         required
                         rows={4}
-                        className="w-full rounded-lg border-slate-200 bg-slate-50 px-4 py-2.5 text-slate-900 placeholder:text-slate-400 focus:border-primary-500 focus:ring-primary-500"
+                        className="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-primary-500 focus:ring-primary-500"
                         placeholder="How can I help you?"
                       />
                     </div>

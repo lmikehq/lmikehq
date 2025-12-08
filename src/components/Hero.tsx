@@ -25,27 +25,27 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="mb-4 inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-sm font-medium text-primary-600 ring-1 ring-inset ring-primary-600/20"
+            className="mb-4 inline-flex items-center rounded-full bg-primary-50 dark:bg-primary-900/30 px-3 py-1 text-sm font-medium text-primary-600 dark:text-primary-400 ring-1 ring-inset ring-primary-600/20 dark:ring-primary-400/30"
           >
             <span className="mr-2 flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500 dark:bg-primary-400"></span>
             </span>
             ML, AI & Data Science Roles
           </motion.div>
 
-          <h1 className="mb-6 text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
+          <h1 className="mb-6 text-5xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl">
             Hi, I'm{" "}
-            <span className="text-primary-600">
+            <span className="text-primary-600 dark:text-primary-400">
               {PERSONAL_INFO.name.split(" ")[0].toLocaleUpperCase()}
             </span>
           </h1>
 
-          <h2 className="mb-6 text-2xl font-medium text-slate-600 sm:text-3xl">
+          <h2 className="mb-6 text-2xl font-medium text-slate-600 dark:text-slate-300 sm:text-3xl">
             {PERSONAL_INFO.title}
           </h2>
 
-          <p className="mb-8 max-w-lg text-lg text-slate-600 leading-relaxed">
+          <p className="mb-8 max-w-lg text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
             {PERSONAL_INFO.tagline}
           </p>
 
@@ -67,19 +67,19 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
               download
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-slate-700 shadow-md ring-1 ring-slate-200 transition-all hover:bg-slate-50"
+              className="flex items-center gap-2 rounded-full bg-white dark:bg-slate-800 px-8 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-md ring-1 ring-slate-200 dark:ring-slate-700 transition-all hover:bg-slate-50 dark:hover:bg-slate-700"
             >
               Resume
               <Download className="h-4 w-4" />
             </motion.a>
           </div>
 
-          <div className="mt-10 flex gap-6 text-slate-400">
+          <div className="mt-10 flex gap-6 text-slate-400 dark:text-slate-500">
             <a
               href={`https://${PERSONAL_INFO.socials.github}`}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-primary-600 transition-colors"
+              className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               <Github className="h-6 w-6" />
             </a>
@@ -87,13 +87,13 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
               href={`https://${PERSONAL_INFO.socials.linkedin}`}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-primary-600 transition-colors"
+              className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               <Linkedin className="h-6 w-6" />
             </a>
             <a
               href={`mailto:${PERSONAL_INFO.email}`}
-              className="hover:text-primary-600 transition-colors"
+              className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               <Mail className="h-6 w-6" />
             </a>
@@ -108,7 +108,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
         >
           <div className="relative">
             <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-primary-500 to-blue-500 opacity-20 blur-2xl" />
-            <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white shadow-2xl sm:h-80 sm:w-80 lg:h-96 lg:w-96">
+            <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white dark:border-slate-800 shadow-2xl sm:h-80 sm:w-80 lg:h-96 lg:w-96">
               <img
                 src="img/mike.jpg"
                 alt="Profile"
