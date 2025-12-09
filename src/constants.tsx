@@ -16,7 +16,7 @@ export const PERSONAL_INFO = {
   title: "Machine Learning Engineer & AI Architect",
   tagline:
     "Allegedly a cracked engineer, contact me to see for yourself!",
-  email: "devmike.llc@gmail.com",
+  email: "contact@mikehq.tech",
   location: "Nigeria (remote)",
   socials: {
     github: "github.com/lmikehq",

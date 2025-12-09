@@ -11,28 +11,28 @@ const About: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="mb-8 text-3xl font-bold text-slate-900 dark:text-white">About Me</h2>
-          <div className="rounded-2xl bg-white dark:bg-slate-800 p-8 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 sm:p-12">
-            <p className="text-lg leading-loose text-slate-600 dark:text-slate-300">
-              With over <span className="font-bold text-slate-900 dark:text-white">5+ years</span> of experience in software engineering,
-              I have transitioned my focus entirely to <span className="font-bold text-primary-600 dark:text-primary-400">Machine Learning and AI</span>.
+          <h2 className="mb-8 text-3xl font-bold text-slate-900">About Me</h2>
+          <div className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-slate-100 sm:p-12">
+            <p className="text-lg leading-loose text-slate-600">
+              With over <span className="font-bold text-slate-900">5+ years</span> of experience in software engineering,
+              I have transitioned my focus entirely to <span className="font-bold text-primary-600">Machine Learning and AI</span>.
               My background as a Full Stack Cloud Architect gives me a unique advantage: I don't just build models;
               I design the scalable infrastructure that serves them. From deploying computer vision pipelines to automating
               recruitment with NLP, I thrive on turning complex data into intuitive, actionable products.
             </p>
 
-            <div className="mt-10 grid grid-cols-3 gap-8 border-t border-slate-100 dark:border-slate-700 pt-10">
+            <div className="mt-10 grid grid-cols-3 gap-8 border-t border-slate-100 pt-10">
               <div>
-                <span className="block text-3xl font-bold text-primary-600 dark:text-primary-400">05+</span>
-                <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Years XP</span>
+                <span className="block text-3xl font-bold text-primary-600">05+</span>
+                <span className="text-sm font-medium text-slate-500">Years XP</span>
               </div>
               <div>
-                <span className="block text-3xl font-bold text-primary-600 dark:text-primary-400">20+</span>
-                <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Projects</span>
+                <span className="block text-3xl font-bold text-primary-600">20+</span>
+                <span className="text-sm font-medium text-slate-500">Projects</span>
               </div>
               <div>
-                <span className="block text-3xl font-bold text-primary-600 dark:text-primary-400">07+</span>
-                <span className="text-sm font-medium text-slate-500 dark:text-slate-400">Companies</span>
+                <span className="block text-3xl font-bold text-primary-600">07+</span>
+                <span className="text-sm font-medium text-slate-500">Companies</span>
               </div>
             </div>
           </div>
